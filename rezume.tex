@@ -111,7 +111,7 @@
 
 % resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
 \newcommand{\resumeSectionType}[3]{
-  \item\begin{tabular*}{0.96\textwidth}[t]{
+  \item\begin{tabular*}{0.66\textwidth}[t]{
     p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}
   }
     \textbf{#1} & #2 & #3
@@ -128,6 +128,7 @@
     \end{tabular*}
   }
 }
+
 
 % resumeQuadHeading renders four elements in a two columns with the second row being italicized and first element of first row bolded, can be used for experience and projects with four elements
 \newcommand{\resumeQuadHeading}[4]{
@@ -175,10 +176,76 @@
 %-----------SUMMARY--------------------------
 % Keep this short, simple and straigth to point
 
-\section{Budding Engineer}
-\small{
-  Hello! My name is Yash Patil and I am a teenager with a \textbf{passion} for \textbf{technology, programming, hacking, and development}. My interest in technology began at the age of 9, when I received my first Android phone. Since then, I have become a fan of \textbf{Debian-based operating systems} and \textbf{Android}. I started from the basics and have come a long way in my learning journey, but I know there is still much more to discover. And I am eager to \textbf{kickstart} my \textbf{tech journey}...
-}
+% \section{Summary}
+% \small{
+%   \textbf{Self-driven technologist} with hands-on experience in \textbf{full-stack development}, \textbf{cybersecurity}, and \textbf{reverse engineering}. Actively building and deploying systems across \textbf{Linux}, \textbf{Android}, and \textbf{web platforms}, with a deep interest in \textbf{software architecture}, \textbf{system security}, and \textbf{low-level tooling}.
+% }
+%--------------------------------------------
+
+%-----------EDUCATION-------------------------
+% Mention your CGPA, if its good, in the first row of second column
+
+\section{Education}
+  \resumeHeadingListStart{}
+    \resumeQuadHeading{University of Mumbai}{K. C. College, Thane}
+    {Bachelor of \textbf{Engineering} in \textbf{Information Technology} with Honours in Cyber Security} {Nov 2022 -- Present}
+    {CGPA (till sem 6): 9.09}
+  \resumeHeadingListEnd{}
+  % \resumeHeadingListStart{}
+  %   \resumeQuadHeading{HSC - Maharashtra Board}{RKT College, Ulhasnagar}
+  %   {Grade: 62\%}{Apr 2022}
+  % \resumeHeadingListEnd{}
+%---------------------------------------------
+
+%-----------EXPERIENCE-----------------------
+% Distill all your talking points to small bullet points which follow the pattern "challenge-action-result" for maximum efficiency. Try to quantify (use numbers) your points whenver possible, highlist words of importance
+
+\section{Experience}
+\resumeHeadingListStart{}
+  \resumeQuadHeading{Cyber Security Research Intern: Android Internals \& Reverse Engineering}{Feb 2025 -- Present}
+  {Center of Excellence (CoE) in Complex and NonLinear Dynamic Systems (CNDS) - \textbf{VJTI}}{}
+    \resumeItemListStart{}
+      \resumeItem{Worked with the researcher team to \textbf{enhance internal tooling} for reverse engineering and analysis of the \textbf{baseband processor} on Android}
+      \resumeItem{Recreated \textbf{CVE-2021-25479} and \textbf{CVE-2021-25478} using the open-source \textbf{FirmWire} framework in an emulated environment, following documented workflows involving \textbf{fuzzing}, \textbf{system emulation}, and \textbf{static analysis} with Ghidra and IDA}
+      \resumeItem{Developed a local cellular network testbed using \textbf{SDR} and open-source stacks like srsRAN, OpenLTE, OpenBTS, YatesBTS, and OpenAirInterface}
+      \resumeItem{Built APK static analysis scripts to automate reverse engineering workflows using \textbf{JadX} and \textbf{Ghidra}}
+      \resumeItem{Researched the fundamentals of Android’s \textbf{Binder IPC} mechanism and its associated vulnerabilities}
+    \resumeItemListEnd{}
+\resumeHeadingListEnd{}
+%---------------------------------------------
+
+%-----------PROJECTS--------------------------
+% Use resumeQuadHeading if four elements are feasible (ex: demo video link), else use resumeTrioHeading. Keep the bullet points simple and concise and try to cover wide variety of skills you have used to build these projects
+
+\section{Projects}
+  \resumeHeadingListStart{}
+
+      \resumeTrioHeading{\href{https://github.com/NandiniNichite/book-recommender-system}{\uline{ReadNexus}}}{Python, Flask, SBERT, Pandas, Jinja}{\href{https://github.com/NandiniNichite/book-recommender-system}{\uline{Source Code}}}
+        \resumeItemListStart{}
+          \resumeItem{Built a full-stack book recommendation system using \textbf{semantic search}, \textbf{collaborative filtering}, and popularity-based ranking}
+          \resumeItem{Used \textbf{SBERT embeddings} + cosine similarity for query-based recommendations on a dataset of 3L+ books and 40K+ summaries}
+          \resumeItem{Implemented \textbf{fuzzy title matching}, interactive search flows, and a \textbf{clean UI} with \textbf{dark mode}}
+        \resumeItemListEnd{}
+        
+        \resumeTrioHeading{\href{https://frost2k5.is-a.dev/SmartSpend}{\uline{SmartSpend}}}{MERN Stack, JWT, Chart.js, Azure App Service}{\href{https://github.com/FrosT2k5/SmartSpend_Backend}{\uline{Source Code}}}
+        \resumeItemListStart{}
+          \resumeItem{Designed and deployed a personal finance manager with \textbf{investment} and \textbf{expense tracking}}
+          \resumeItem{Implemented secure \textbf{JWT auth} with auto-renewal via \textbf{HTTPS cookies} and a SwaggerUI-documented REST API}
+          \resumeItem{Used \textbf{Chart.js} for visual financial insights; deployed on \textbf{Azure App Service}}
+        \resumeItemListEnd{}
+        
+      
+        {\textbf{Other Projects}}{:}
+        \resumeItemListStart{}
+       
+            \resumeItem{\href{https://openmedia-e0gvb8fzbnexafd8.centralus-01.azurewebsites.net/}{\uline{OpenMedia}} – Flask, SQLAlchemy, Bootstrap; microblogging platform with media uploads and privacy features.}
+            \resumeItem{\href{https://github.com/FrosT2k5/diary}{\uline{Digital Encrypted Diary}} – GnuPG + Python/Bash; CLI diary with Git-based sync and year-wise encrypted files.}
+            \resumeItem{\href{https://github.com/FrosT2k5/AirQualitySensor}{\uline{AirQualitySensor}} – ESP32 (C++) + React dashboard; real-time pollution monitoring with multiple sensors.}
+        
+    
+        \resumeItemListEnd{}
+      
+  \resumeHeadingListEnd{}
 %--------------------------------------------
 
 
@@ -187,81 +254,26 @@
 
 \section{Technical Skills}
   \resumeHeadingListStart{}
-    \resumeSectionType{Languages}{:}{Python, C, HTML, CSS, JavaScript, bash, Linux/Unix}
-    \resumeSectionType{Frameworks}{:}{FastAPI, Telethon, Docker}
-    \resumeSectionType{Dev Tools}{:}{Visual Studio Code, Git, Github/GitLab, Cloud Computing, CI/CD, GitHub Actions, Automation}
+    \resumeSectionType{Languages}{:}{Python, JavaScript, Java, C/C++, Bash}
+    \resumeSectionType{Frameworks}{:}{Django, Flask, React, Node.js, Express, SQLAlchemy, Mongoose, Bootstrap, REST APIs, JWT}
+    \resumeSectionType{Tools}{:}{Git, Docker, Azure, CI/CD,  Swagger/OpenAPI, GNU/Linux utilities}
   \resumeHeadingListEnd{}
-%--------------------------------------------
 
-
-%-----------EXPERIENCE-----------------------
-% Distill all your talking points to small bullet points which follow the pattern "challenge-action-result" for maximum efficiency. Try to quantify (use numbers) your points whenver possible, highlist words of importance
-%---------------------------------------------
-
-
-%-----------EDUCATION-------------------------
-% Mention your CGPA, if its good, in the first row of second column
-
-\section{Education}
-  \resumeHeadingListStart{}
-    \resumeQuadHeading{University of Mumbai}{Thane, Maharashtra, India}
-    {Bachelor of Engineering in Information Technology}{KC College, Thane}{Jan 2022 -- Present}
-  \resumeHeadingListEnd{}
-%---------------------------------------------
-
-
-%-----------PROJECTS--------------------------
-% Use resumeQuadHeading if four elements are feasible (ex: demo video link), else use resumeTrioHeading. Keep the bullet points simple and concise and try to cover wide variety of skills you have used to build these projects
-
-\section{Projects}
-  \resumeHeadingListStart{}
-    \resumeTrioHeading{\href{https://github.com/FrosT2k5/diary.git/}{\uline{Digital diary}}}{Python, Linux, GnuPG, Git}{\href{https://github.com/FrosT2k5/diary.git/}{\uline{Source Code}}}
-      \resumeItemListStart{}
-        \resumeItem{Developed a CLI-Based diary which for writing personal stuff on}
-        \resumeItem{Used GnuPG Public key encryption for encrypting}
-        \resumeItem{Automatic git pull and push to upload diary on git and sync across devices}
-        \resumeItem{Used json to configure the diary}
-      \resumeItemListEnd{}
-
-      \resumeTrioHeading{\href{https://moodflip.github.io/}{\uline{MoodFlip Chocolates}}}{HTML, CSS, JavaScript, Github Pages}{\href{https://github.com/moodflip/moodflip.github.io}{\uline{Source Code}}}
-      \resumeItemListStart{}
-        \resumeItem{Developed clean and modern website from scratch according to design provided by client}
-        \resumeItem{Optimized website for \textbf{speed and user experience}}
-        \resumeItem{Utilized \textbf{responsive design} to ensure compatibility across all devices}
-        \resumeItem{Developed \textbf{backend} and \textbf{API} for sending form submissions to \textbf{Telegram Bot}}
-        \resumeItem{Deployed on GitHub pages via GitHub Actions}
-      \resumeItemListEnd{}
-
-      \resumeTrioHeading{\href{https://sourceforge.net/projects/derpfest/files/sakura/}{\uline{DerpFest OS - Maintainership}}}{Bash, Linux, CI/CD, Automation,  Cloud Computing}{\href{https://github.com/FrosT2k5/device_xiaomi_sakura.git}{\uline{Source Code}}}
-      \resumeItemListStart{}
-        \resumeItem{\textbf{Developed and maintained} Android Open-Source Distribution: DerpFest OS for Redmi 6 Pro}
-        \resumeItem{Used \textbf{Cloud Computing} (GCloud, AWS) and remote server access using \textbf{SSH} to build android from source code}
-        \resumeItem{Used \textbf{bash} scripting to automate building and deploying via CI/CD}
-        \resumeItem{Maintained device tree sources for Redmi 6 Pro, including \textbf{testing, bug fixing and security practices}}
-      \resumeItemListEnd{}
-      
-        {\textbf{Other Projects}}{:}
-        \resumeItemListStart{}
-       
-        \resumeItem{\href{https://github.com/SkyLab-Devs/CosmicUserbot/}{\uline{Cosmic Userbot for Telegram}}}
-        \resumeItem{\href{https://github.com/FrosT2k5/DragonAssistant/}{\uline{CLI-Based Assistant using Speech to text}}}
-        \resumeItem{\href{https://github.com/FrosT2k5/TypingTest/}{\uline{Typing Testing app in CLI, made with Python Curses Library}}}
-    
-        \resumeItemListEnd{}
-      
-  \resumeHeadingListEnd{}
 %--------------------------------------------
 
 
 %----------------OTHERS----------------------
 % You can add your acheivements, accolades, certifications etc. here.
 
-\section{Certifications}
-  \resumeItemListStart{}
-    \resumeItem{\href{https://onemonth.com/certificates/t4MkFQmAX4XTzfcdT6fX}{\uline{HTML/CSS Course Completion from onemonth.com}}}
-    \resumeItem{\href{https://www.sololearn.com/certificates/course/en/15992021/1073/landscape/png}{\uline{Python Core course completion from SoloLearn}}}
-    \resumeItem{\href{https://drive.google.com/file/d/1Yxw1797G7D8O16-XyN4goXcvKS6nZpCJ/view?usp=sharing}{\uline{Hands On Web Development Workshop, KC College}}}
-  \resumeItemListEnd{}
+\section{Certifications and Achievements}
+\resumeItemListStart{}
+  \resumeItem{1\textsuperscript{st} – Debugging (Technotia, Kamaladevi) \& Codesprint Codathon (GDSC, KC@2023); Dept. Topper (IT, 2023–24)} 
+  \resumeItem{2\textsuperscript{nd} – Reverse Coding (Technotia); 2\textsuperscript{nd} – T915 Android Internals CTF (VJTI); 3\textsuperscript{rd} – SIH Internal Hackathon (K.C. College)}
+  \resumeItem{Virtual Internships via Eduskills: \href{https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=302f1886823167c7ef0ef578223c072f}{\uline{CyberSecurity}}, \href{https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=9d7218a4a5c5ededd2b49dfc987bbf61}{\uline{Android Developer}}, \href{https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=13bcb2d0ecf9d2b4c0cfd2e236300456}{\uline{Data Science Master}}, \href{https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=cfae1e9e1eecb2a6b907475e90b5e31f}{\uline{Computer Networks}}}
+
+\resumeItemListEnd{}
+
 %--------------------------------------------
 
 \end{document}
+
